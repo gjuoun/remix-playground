@@ -1,8 +1,7 @@
-import { json, Link, useLoaderData } from "remix";
-
 import { getPosts } from "~/post";
 import type { Post } from "~/post";
 import adminStyles from "~/styles/admin.css";
+import { json, Outlet, Link, useLoaderData } from "remix";
 
 export const links = () => {
   return [{ rel: "stylesheet", href: adminStyles }];
@@ -26,7 +25,9 @@ export default function Admin() {
           ))}
         </ul>
       </nav>
-      <main>...</main>
+      <main>
+        <Outlet />
+      </main>
     </div>
   );
 }
